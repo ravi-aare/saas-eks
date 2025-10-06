@@ -9,4 +9,4 @@ variable "max_size"          { type = number default = 5 }
 variable "desired_size"      { type = number default = 2 }
 variable "use_spot"          { type = bool   default = true }
 
-variable "app_image"         { type = string default = "111111111111.dkr.ecr.ap-south-1.amazonaws.com/saas-web:latest" }
+variable "app_image"         { type = string default = "675467602881.dkr.ecr.ap-south-1.amazonaws.com/web:latest" }

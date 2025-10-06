@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: "111111111111.dkr.ecr.ap-south-1.amazonaws.com/saas-web:latest"
+          image: "675467602881.dkr.ecr.ap-south-1.amazonaws.com/web:latest"
           ports:
             - containerPort: 5000
           resources:
