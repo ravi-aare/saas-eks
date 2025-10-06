@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: saas-web
+  namespace: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: saas-web
+  template:
+    metadata:
+      labels:
+        app: saas-web
+    spec:
+      containers:
+        - name: web
+          image: "111111111111.dkr.ecr.ap-south-1.amazonaws.com/saas-web:latest"
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 15
